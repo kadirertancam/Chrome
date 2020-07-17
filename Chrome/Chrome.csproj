@@ -113,19 +113,19 @@
     </Reference>
     <Reference Include="CefSharp, Version=83.4.20.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\SharpBrowser-master\src\bin\CefSharp.dll</HintPath>
+      <HintPath>..\packages\CefSharp.Common.83.4.20\CefSharp\x86\CefSharp.dll</HintPath>
     </Reference>
     <Reference Include="CefSharp.Core, Version=83.4.20.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\SharpBrowser-master\src\bin\CefSharp.Core.dll</HintPath>
+      <HintPath>..\packages\CefSharp.Common.83.4.20\CefSharp\x86\CefSharp.Core.dll</HintPath>
     </Reference>
     <Reference Include="CefSharp.OffScreen, Version=83.4.20.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Baglanti\bin\x86\Debug\CefSharp.OffScreen.dll</HintPath>
+      <HintPath>..\packages\CefSharp.OffScreen.83.4.20\CefSharp\x86\CefSharp.OffScreen.dll</HintPath>
     </Reference>
     <Reference Include="CefSharp.WinForms, Version=83.4.20.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\SharpBrowser-master\src\bin\CefSharp.WinForms.dll</HintPath>
+      <HintPath>..\packages\CefSharp.WinForms.83.4.20\CefSharp\x86\CefSharp.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Indieteur.GlobalHooks, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Indieteur.GlobalHooks.1.0.0\lib\Indieteur.GlobalHooks.dll</HintPath>
