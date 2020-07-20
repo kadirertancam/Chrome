@@ -22,28 +22,9 @@ namespace Chrome
         {
             InitializeComponent();
             req = new RequestHandler(this);
-            Icon = Properties.Resources.Ico1;
-            bool kontrol = InternetKontrol();  
-            if (kontrol != true)
-            {
-                MessageBox.Show("İnternet bağlantınızı kontrol ediniz.");
-            }
+            Icon = Properties.Resources.Ico1; 
         }
-        public bool InternetKontrol()
-        {
-            try
-            {
-                System.Net.Sockets.TcpClient kontrol_client = new System.Net.Sockets.TcpClient("www.google.com.tr", 80);
-                kontrol_client.Close();
-                return true;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-        }
-
+       
         #region degisken
         public ChromiumWebBrowser br;
         RequestHandler req;
