@@ -215,7 +215,7 @@ namespace Chrome.Handlers
                         if (satir.Length > 0)
                         { 
                             double i = ((100 - Convert.ToDouble(satir[2])) / 10) *2;
-                            chromiumWebBrowser.SetZoomLevel(((100 - Convert.ToDouble(satir[2])) / 10) * 2);
+                            chromiumWebBrowser.SetZoomLevel(i);
                             durum = false;
                         }
                         else
