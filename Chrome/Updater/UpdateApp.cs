@@ -86,24 +86,15 @@ namespace Chrome.Updater
         {
             if (args != null)
             {
-                if (args.IsUpdateAvailable)
-                { 
-                    Message(args);
-
-                   
-                }
+                if (args.IsUpdateAvailable)  Message(args);  
                 else
                 {
                     MessageBox.Show(@"Şuanda bir güncelleme bulunmamaktadır. Lütfen daha sonra tekrar deneyiniz.", @"Update Bulunamadı",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            else
-            {
-                MessageBox.Show(
-                    @"Güncelleme aranırken sorun oluştu. Lütfen internet bağlantınızı kontrol edip tekrar deneyiniz.",
-                    @"Update Kontrol Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            else 
+                MessageBox.Show(@"Güncelleme aranırken sorun oluştu. Lütfen internet bağlantınızı kontrol edip tekrar deneyiniz.",  @"Update Kontrol Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error); 
         }
 
     }
