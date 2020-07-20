@@ -238,63 +238,6 @@ namespace Chrome
         {
             if (this.ContainsFocus)
             {
-                if (e.KeyData == (Keys.Alt | Keys.D5))
-                {
-                    this.Invoke(new Action(delegate
-                    {
-                        url = Interaction.InputBox("Url Girisi", "Url", "", 0, 0);
-                        siteisim = Interaction.InputBox("Site isim", "Isim", "", 0, 0);
-                        br.Load(url);
-                        File.WriteAllText(dosya, url + Environment.NewLine + siteisim);
-                    }));
-
-
-                }
-                if (e.KeyData == (Keys.F2))
-                {
-                    Ayar a = new Ayar();
-                    if (a.Created)
-                    {
-                        a.Activate();
-                    }
-                    else
-                    {
-
-                        a.Show();
-                    }
-                }
-                if (e.KeyData == (Keys.F1))
-                {
-                    pr = new AboutBox1();
-                    if (pr.Created)
-                    {
-                        pr.Activate();
-                    }
-                    else
-                    {
-
-                        pr.Show();
-                    }
-                }
-                if (e.KeyData == (Keys.Alt | Keys.D9))
-                {
-                    this.Invoke(new Action(delegate
-                    {
-                        try
-                        {
-                            AutoUpdater.Mandatory = true;
-                            AutoUpdater.Start("http://localhost/C/deneme.xml");
-
-                        }
-                        catch (Exception ex)
-                        {
-
-                            MessageBox.Show("Sunucuya bağlanılamıyor");
-                        }
-
-                    }));
-
-                }
                 if (e.KeyData == (Keys.Control | Keys.P))
                 {
                     this.Invoke(new Action(delegate
