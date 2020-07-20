@@ -64,6 +64,23 @@ namespace Chrome.Updater
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Information);
             }
+            if (dialogResult.Equals(DialogResult.Yes) || dialogResult.Equals(DialogResult.OK))
+            {
+                try
+                {
+                    //You can use Download Update dialog used by AutoUpdater.NET to download the update.
+
+                    if (AutoUpdater.DownloadUpdate(args))
+                    {
+                        Application.Exit();
+                    }
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message, exception.GetType().ToString(), MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
         }
         private void AutoUpdaterOnCheckForUpdateEvent(UpdateInfoEventArgs args)
         {
@@ -73,23 +90,7 @@ namespace Chrome.Updater
                 { 
                     Message(args);
 
-                    if (dialogResult.Equals(DialogResult.Yes) || dialogResult.Equals(DialogResult.OK))
-                    {
-                        try
-                        {
-                            //You can use Download Update dialog used by AutoUpdater.NET to download the update.
-
-                            if (AutoUpdater.DownloadUpdate(args))
-                            {
-                                Application.Exit();
-                            }
-                        }
-                        catch (Exception exception)
-                        {
-                            MessageBox.Show(exception.Message, exception.GetType().ToString(), MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                        }
-                    }
+                   
                 }
                 else
                 {
