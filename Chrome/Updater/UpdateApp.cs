@@ -38,37 +38,40 @@ namespace Chrome.Updater
                     HashingAlgorithm = json.checksum.hashingAlgorithm
                 }
             };
-        } 
-
+        }
+        DialogResult dialogResult;
+        void Message(UpdateInfoEventArgs args)
+        {
+            
+            if (args.Mandatory.Value)
+            {
+                dialogResult =
+                    MessageBox.Show(
+                         $@"Yeni bir versiyon {args.CurrentVersion} bulunmakta. Suanda  {
+                                args.InstalledVersion
+                            } versiyonunu kullanmaktasiniz. Simdi guncellemek istermisiniz?",
+                        @"Update Available",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+            }
+            else
+            {
+                dialogResult =
+                    MessageBox.Show(
+                        $@"Yeni bir versiyon {args.CurrentVersion} bulunmakta. Suanda  {
+                                args.InstalledVersion
+                            } versiyonunu kullanmaktasiniz. Simdi guncellemek istermisiniz?", @"Update Available",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Information);
+            }
+        }
         private void AutoUpdaterOnCheckForUpdateEvent(UpdateInfoEventArgs args)
         {
             if (args != null)
             {
                 if (args.IsUpdateAvailable)
-                {
-                    DialogResult dialogResult;
-                    if (args.Mandatory.Value)
-                    {
-                        dialogResult =
-                            MessageBox.Show(
-                                 $@"Yeni bir versiyon {args.CurrentVersion} bulunmakta. Suanda  {
-                                        args.InstalledVersion
-                                    } versiyonunu kullanmaktasiniz. Simdi guncellemek istermisiniz?",
-                                @"Update Available",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        dialogResult =
-                            MessageBox.Show(
-                                $@"Yeni bir versiyon {args.CurrentVersion} bulunmakta. Suanda  {
-                                        args.InstalledVersion
-                                    } versiyonunu kullanmaktasiniz. Simdi guncellemek istermisiniz?", @"Update Available",
-                                MessageBoxButtons.YesNo,
-                                MessageBoxIcon.Information);
-                    }
-
+                { 
+                    Message(args);
 
                     if (dialogResult.Equals(DialogResult.Yes) || dialogResult.Equals(DialogResult.OK))
                     {
