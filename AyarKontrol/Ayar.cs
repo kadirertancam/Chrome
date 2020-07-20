@@ -25,13 +25,8 @@ namespace AyarKontrol
                 {
                     textBox1.Text = satir[0];
                     textBox2.Text = satir[1];
-                    textBox3.Text = satir[2];
-
-                }
-                else
-                {
-                      
-                }
+                    textBox3.Text = satir[2]; 
+                } 
             }
         }
     }

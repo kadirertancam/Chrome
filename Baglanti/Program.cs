@@ -18,7 +18,7 @@ namespace Baglanti
             Cef.WaitForBrowsersToClose();
             Cef.Initialize(s, performDependencyCheck: true, browserProcessHandler: null);
             bool kontrol = InternetKontrol();  
-                                              
+                    
             if (kontrol != true)
             {
                 Console.WriteLine("İnternet bağlantınızı kontrol ediniz.");
